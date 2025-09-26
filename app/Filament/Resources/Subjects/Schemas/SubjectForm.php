@@ -12,9 +12,11 @@ class SubjectForm
         return $schema
             ->components([
                 TextInput::make('name')
+                    ->label('Nama Mata Pelajaran')
                     ->required()
                     ->maxLength(255),
                 TextInput::make('code')
+                    ->label('Kode Mata Pelajaran')
                     ->required()
                     ->unique(ignoreRecord: true)
                     ->maxLength(255),
