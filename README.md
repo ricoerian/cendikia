@@ -95,8 +95,8 @@ Pastikan Anda telah menginstal perangkat lunak berikut:
 1.  **Clone repositori:**
 
     ```bash
-    git clone [https://github.com/ricoerian/Cendekia.git](https://github.com/ricoerian/Cendekia.git)
-    cd Cendekia
+    git clone [https://github.com/ricoerian/cendekia.git](https://github.com/ricoerian/cendekia.git)
+    cd cendekia
     ```
 
 2.  **Instal dependensi PHP:**
