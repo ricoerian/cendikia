@@ -1,61 +1,106 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Cendikia
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Cendikia adalah sistem informasi sekolah modern yang dikembangkan oleh Kepala Laboratorium SMK Purnawarman. Aplikasi ini membantu mengelola berbagai aspek administrasi dan akademik sekolah, mulai dari pendaftaran siswa baru (PPDB) hingga manajemen data siswa, guru, dan mata pelajaran. Dengan antarmuka yang ramah pengguna dan dibangun di atas teknologi web terbaru, Cendikia bertujuan untuk meningkatkan efisiensi dan transparansi dalam lingkungan sekolah.
 
-## About Laravel
+## Fitur Utama
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+* **Pendaftaran Peserta Didik Baru (PPDB)**: Proses pendaftaran online yang mudah untuk siswa baru.
+* **Manajemen Data Induk**: Pengelolaan data siswa, guru, orang tua, kelas, dan mata pelajaran.
+* **Panel Administrasi**: Antarmuka admin yang kuat untuk mengelola semua aspek sistem.
+* **Notifikasi**: Sistem notifikasi terintegrasi untuk memberikan informasi penting kepada pengguna.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Teknologi yang Digunakan
 
-## Learning Laravel
+Proyek ini dibangun menggunakan teknologi modern dan andal, termasuk:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Backend
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+* **PHP 8.2**
+* **Laravel 12**: Framework PHP yang elegan untuk pengembangan aplikasi web.
+* **Filament 4.0**: Admin panel yang dapat disesuaikan untuk Laravel.
+* **Laravel Sanctum**: Untuk otentikasi API yang ringan.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Frontend
 
-## Laravel Sponsors
+* **React 18.2**: Pustaka JavaScript untuk membangun antarmuka pengguna.
+* **Inertia.js 2.0**: Memungkinkan pembuatan aplikasi satu halaman (SPA) menggunakan rendering sisi server.
+* **Tailwind CSS 3.2**: Framework CSS untuk desain yang cepat dan responsif.
+* **Vite 7.0**: Alat build frontend generasi berikutnya.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Basis Data
 
-### Premium Partners
+* **MySQL** (atau basis data relasional lainnya yang didukung oleh Laravel)
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+---
 
-## Contributing
+## Instalasi
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Ikuti langkah-langkah berikut untuk menginstal dan menjalankan proyek ini di lingkungan lokal Anda.
 
-## Code of Conduct
+### Prasyarat
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Pastikan Anda telah menginstal perangkat lunak berikut:
 
-## Security Vulnerabilities
+* **PHP 8.2** atau lebih tinggi
+* **Composer**
+* **Node.js** dan **npm**
+* **Database** (misalnya MySQL, MariaDB, atau PostgreSQL)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### Langkah-langkah Instalasi
 
-## License
+1.  **Clone repositori:**
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+    ```bash
+    git clone [https://github.com/ricoerian/cendikia.git](https://github.com/ricoerian/cendikia.git)
+    cd cendikia
+    ```
+
+2.  **Instal dependensi PHP:**
+
+    ```bash
+    composer install
+    ```
+
+3.  **Instal dependensi Node.js:**
+
+    ```bash
+    npm install
+    ```
+
+4.  **Buat file `.env`:**
+
+    Salin file `.env.example` menjadi `.env`.
+
+    ```bash
+    cp .env.example .env
+    ```
+
+5.  **Hasilkan kunci aplikasi:**
+
+    ```bash
+    php artisan key:generate
+    ```
+
+6.  **Konfigurasi basis data:**
+
+    Buka file `.env` dan atur variabel lingkungan basis data (`DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD`, dll.).
+
+7.  **Jalankan migrasi basis data:**
+
+    Ini akan membuat semua tabel yang diperlukan dalam basis data Anda.
+
+    ```bash
+    php artisan migrate
+    ```
+
+8.  **Jalankan aplikasi:**
+
+    Gunakan perintah `dev` untuk menjalankan server pengembangan PHP dan Vite secara bersamaan.
+
+    ```bash
+    php artisan dev
+    ```
+
+    Aplikasi sekarang akan berjalan di `http://127.0.0.1:8000`. Panel admin dapat diakses di `http://127.0.0.1:8000/admin`.
