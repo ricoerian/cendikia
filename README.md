@@ -1,13 +1,49 @@
 # Cendikia
 
-Cendikia adalah sistem informasi sekolah modern yang dikembangkan oleh Kepala Laboratorium SMK Purnawarman. Aplikasi ini membantu mengelola berbagai aspek administrasi dan akademik sekolah, mulai dari pendaftaran siswa baru (PPDB) hingga manajemen data siswa, guru, dan mata pelajaran. Dengan antarmuka yang ramah pengguna dan dibangun di atas teknologi web terbaru, Cendikia bertujuan untuk meningkatkan efisiensi dan transparansi dalam lingkungan sekolah.
+Cendikia adalah sistem informasi sekolah modern yang dikembangkan oleh Kepala Laboratorium SMK Purnawarman. Aplikasi ini memiliki tujuan untuk menggabungkan School Management System, Learning Management System, Computer Based Test, dan E-Raport. Dengan antarmuka yang ramah pengguna dan dibangun di atas teknologi web terbaru, Cendikia bertujuan untuk meningkatkan efisiensi dan transparansi dalam lingkungan sekolah.
 
-## Fitur Utama
+## Fitur yang sudah dikembangkan
 
-* **Pendaftaran Peserta Didik Baru (PPDB)**: Proses pendaftaran online yang mudah untuk siswa baru.
-* **Manajemen Data Induk**: Pengelolaan data siswa, guru, orang tua, kelas, dan mata pelajaran.
-* **Panel Administrasi**: Antarmuka admin yang kuat untuk mengelola semua aspek sistem.
-* **Notifikasi**: Sistem notifikasi terintegrasi untuk memberikan informasi penting kepada pengguna.
+School Management System (SMS):
+* Admin Side :
+* * **Manajemen Tahun Ajaran**: Pengelolaan data tahun ajaran yang digunakan dalam sistem.
+* * **Manajemen Rombongan Belajar**: Pengelolaan data rombongan belajar yang digunakan dalam sistem yang bisa terhubung dengan Enrollments yang dimana nanti terhubung dengan Siswa Juga.
+* * **Manajemen Tingkat**: Pengelolaan data tingkat yang digunakan dalam sistem.
+* * **Manajemen Jurusan**: Pengelolaan data jurusan yang digunakan dalam sistem.
+* * **Manajemen Mata Pelajaran**: Pengelolaan data mata pelajaran yang digunakan dalam sistem.
+* * **Manajemen Orang Tua**: Pengelolaan data Orang Tua yang digunakan dalam sistem.
+* * **Manajemen Siswa**: Pengelolaan data Siswa yang digunakan dalam sistem.
+* * **Manajemen Guru**: Pengelolaan data Guru yang digunakan dalam sistem.
+* * **Penerimaan Peserta Didik Baru (PPDB)**: Proses pendaftaran digital yang mudah untuk staff mendaftarkan siswa baru.
+* * **Notifikasi**: Sistem notifikasi terintegrasi untuk memberikan informasi penting kepada pengguna.
+
+## Fitur yang akan dikembangkan
+
+School Management System (SMS):
+* Admin Side :
+* * **Manajemen Jadwal Mengajar**: Pengelolaan data jadwal mengajar yang digunakan dalam sistem.
+* * **Manajemen Kehadiran/Absensi**: Pengelolaan data kehadiran/absensi yang digunakan dalam sistem.
+* Teacher Side :
+* Student Side :
+* Parent Side :
+
+Learning Management System (LMS):
+* Admin Side :
+* Teacher Side :
+* Student Side :
+* Parent Side :
+
+Computer Based Test (CBT):
+* Admin Side :
+* Teacher Side :
+* Student Side :
+* Parent Side :
+
+E-Raport:
+* Admin Side :
+* Teacher Side :
+* Student Side :
+* Parent Side :
 
 ---
 
@@ -111,5 +147,5 @@ Pastikan Anda telah menginstal perangkat lunak berikut:
     ```bash
     php artisan make:filament-user
     ```
-    
+
     Isi sesuai dengan informasi yang diperlukan.
