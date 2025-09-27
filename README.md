@@ -2,7 +2,6 @@
 
 # Cendekia
 
-<img src="public/images/logo.png" alt="Logo Proyek Cendekia" width="400"/>
 
 </div>
 
