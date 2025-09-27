@@ -104,3 +104,12 @@ Pastikan Anda telah menginstal perangkat lunak berikut:
     ```
 
     Aplikasi sekarang akan berjalan di `http://127.0.0.1:8000`. Panel admin dapat diakses di `http://127.0.0.1:8000/admin`.
+9.  **Membuat Superadmin:**
+
+    Gunakan perintah berikut untuk membuat superadmin:
+
+    ```bash
+    php artisan make:filament-user
+    ```
+    
+    Isi sesuai dengan informasi yang diperlukan.
