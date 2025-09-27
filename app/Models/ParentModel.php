@@ -8,25 +8,19 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Student extends Model
+class ParentModel extends Model
 {
     use HasFactory, SoftDeletes;
+    
+    protected $table = 'parents';
 
     protected $fillable = [
         'user_id',
-        'nis',
-        'nisn',
-        'status',
-        'gender',
-        'place_of_birth',
-        'date_of_birth',
-        'religion',
+        'nik',
+        'phone_number',
         'address',
+        'occupation',
         'photo',
-    ];
-
-    protected $casts = [
-        'date_of_birth' => 'date',
     ];
 
     public function user(): BelongsTo
@@ -34,8 +28,8 @@ class Student extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function parentModels(): BelongsToMany
+    public function students(): BelongsToMany
     {
-        return $this->belongsToMany(ParentModel::class, 'parent_model_student', 'student_id', 'parent_model_id');
+        return $this->belongsToMany(Student::class, 'parent_model_student', 'parent_model_id', 'student_id');
     }
 }

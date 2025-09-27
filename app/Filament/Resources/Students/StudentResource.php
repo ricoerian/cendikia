@@ -7,6 +7,7 @@ use App\Filament\Resources\Students\Pages\EditStudent;
 use App\Filament\Resources\Students\Pages\ListStudents;
 use App\Filament\Resources\Students\Schemas\StudentForm;
 use App\Filament\Resources\Students\Tables\StudentsTable;
+use App\Filament\Resources\Students\RelationManagers\ParentModelsRelationManager;
 use App\Models\Student;
 use BackedEnum;
 use UnitEnum;
@@ -41,7 +42,7 @@ class StudentResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            ParentModelsRelationManager::class,
         ];
     }
 
