@@ -97,10 +97,10 @@ Pastikan Anda telah menginstal perangkat lunak berikut:
 
 8.  **Jalankan aplikasi:**
 
-    Gunakan perintah `dev` untuk menjalankan server pengembangan PHP dan Vite secara bersamaan.
+    Gunakan perintah `serve` untuk menjalankan server pengembangan PHP dan Vite secara bersamaan.
 
     ```bash
-    php artisan dev
+    php artisan serve
     ```
 
     Aplikasi sekarang akan berjalan di `http://127.0.0.1:8000`. Panel admin dapat diakses di `http://127.0.0.1:8000/admin`.
