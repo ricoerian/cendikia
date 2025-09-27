@@ -1,6 +1,10 @@
+<div align="center">
+
 # Cendikia
 
-![Logo Proyek Cendikia](public/images/logo.png)
+<img src="public/images/logo.png" alt="Logo Proyek Cendikia" width="400"/>
+
+</div>
 
 Cendikia adalah sistem informasi sekolah modern yang dikembangkan oleh Kepala Laboratorium SMK Purnawarman. Aplikasi ini memiliki tujuan untuk menggabungkan School Management System, Learning Management System, Computer Based Test, dan E-Raport. Dengan antarmuka yang ramah pengguna dan dibangun di atas teknologi web terbaru, Cendikia bertujuan untuk meningkatkan efisiensi dan transparansi dalam lingkungan sekolah.
 
