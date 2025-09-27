@@ -1,12 +1,12 @@
 <div align="center">
 
-# Cendikia
+# Cendekia
 
-<img src="public/images/logo.png" alt="Logo Proyek Cendikia" width="400"/>
+<img src="public/images/logo.png" alt="Logo Proyek Cendekia" width="400"/>
 
 </div>
 
-Cendikia adalah sistem informasi sekolah modern yang dikembangkan oleh Kepala Laboratorium SMK Purnawarman. Aplikasi ini memiliki tujuan untuk menggabungkan School Management System, Learning Management System, Computer Based Test, dan E-Raport. Dengan antarmuka yang ramah pengguna dan dibangun di atas teknologi web terbaru, Cendikia bertujuan untuk meningkatkan efisiensi dan transparansi dalam lingkungan sekolah.
+Cendekia adalah sistem informasi sekolah modern yang dikembangkan oleh Kepala Laboratorium SMK Purnawarman. Aplikasi ini memiliki tujuan untuk menggabungkan School Management System, Learning Management System, Computer Based Test, dan E-Raport. Dengan antarmuka yang ramah pengguna dan dibangun di atas teknologi web terbaru, Cendekia bertujuan untuk meningkatkan efisiensi dan transparansi dalam lingkungan sekolah.
 
 ## Fitur yang sudah dikembangkan
 
@@ -95,8 +95,8 @@ Pastikan Anda telah menginstal perangkat lunak berikut:
 1.  **Clone repositori:**
 
     ```bash
-    git clone [https://github.com/ricoerian/cendikia.git](https://github.com/ricoerian/cendikia.git)
-    cd cendikia
+    git clone [https://github.com/ricoerian/Cendekia.git](https://github.com/ricoerian/Cendekia.git)
+    cd Cendekia
     ```
 
 2.  **Instal dependensi PHP:**
