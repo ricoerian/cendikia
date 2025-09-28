@@ -14,6 +14,18 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/profile-sekolah', function () {
+    return Inertia::render('ProfileSekolah');
+});
+
+Route::get('/sejarah-singkat', function () {
+    return Inertia::render('SejarahSingkat');
+});
+
+Route::get('/pendidik-dan-tenaga-kependidikan', function () {
+    return Inertia::render('PendidikDanTenagaKependidikan');
+});
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
