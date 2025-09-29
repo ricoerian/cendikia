@@ -15,6 +15,17 @@ class EditStudent extends EditRecord
 {
     protected static string $resource = StudentResource::class;
 
+    public function mount(int | string $record): void
+    {
+        $this->record = $this->resolveRecord($record);
+        
+        if (!$this->record->relationLoaded('user')) {
+             $this->record->load('user');
+        }
+
+        $this->form->fill($this->record->toArray());
+    }
+
     protected function getHeaderActions(): array
     {
         return [
@@ -26,15 +37,18 @@ class EditStudent extends EditRecord
 
     protected function handleRecordUpdate(Model $record, array $data): Model
     {
-        $userData = Arr::only($data, ['name', 'email', 'password']);
-        $studentData = Arr::except($data, ['name', 'email', 'password']);
-
-        $record->user->update(Arr::except($userData, ['password']));
-
-        if (!empty($userData['password'])) {
-            $record->user->update(['password' => Hash::make($userData['password'])]);
+        $userDataFromForm = Arr::get($data, 'user', []);
+        $studentData = Arr::except($data, ['user']); 
+        if (!empty($userDataFromForm)) {
+            $userUpdateData = [
+                'name' => Arr::get($userDataFromForm, 'name'),
+                'email' => Arr::get($userDataFromForm, 'email'),
+            ];
+            if (!empty(Arr::get($userDataFromForm, 'password'))) {
+                $userUpdateData['password'] = Hash::make($userDataFromForm['password']);
+            }
+            $record->user->update($userUpdateData);
         }
-
         $record->update($studentData);
         return $record;
     }

@@ -13,12 +13,21 @@ class ParentModelForm
     {
         return $schema
             ->components([
-                TextInput::make('name')->required(),
-                TextInput::make('email')->email()->required(),
-                TextInput::make('password')->password()
+                TextInput::make('user.name')
+                    ->label('Nama Lengkap')
+                    ->required()
+                    ->maxLength(255),
+                TextInput::make('user.email')
+                    ->label('Email')
+                    ->email()
+                    ->required()
+                    ->maxLength(255),
+                TextInput::make('user.password')
+                    ->password()
+                    ->revealable()
                     ->required(fn (string $context): bool => $context === 'create')
-                    ->dehydrated(fn ($state) => filled($state)),
-
+                    ->dehydrated(fn ($state) => filled($state))
+                    ->maxLength(255),
                 TextInput::make('nik')->label('NIK')->unique(ignoreRecord: true)->nullable(),
                 TextInput::make('phone_number')->label('No. Telepon')->tel(),
                 TextInput::make('occupation')->label('Pekerjaan'),

@@ -15,12 +15,21 @@ class StudentForm
     {
         return $schema
             ->components([
-                TextInput::make('name')->required(),
-                TextInput::make('email')->email()->required(),
-                TextInput::make('password')->password()
+                TextInput::make('user.name')
+                    ->label('Nama Lengkap')
+                    ->required()
+                    ->maxLength(255),
+                TextInput::make('user.email')
+                    ->label('Email')
+                    ->email()
+                    ->required()
+                    ->maxLength(255),
+                TextInput::make('user.password')
+                    ->password()
+                    ->revealable()
                     ->required(fn (string $context): bool => $context === 'create')
-                    ->dehydrated(fn ($state) => filled($state)),
-
+                    ->dehydrated(fn ($state) => filled($state))
+                    ->maxLength(255),
                 Select::make('status')->options([
                     'calon' => 'Calon',
                     'aktif' => 'Aktif',

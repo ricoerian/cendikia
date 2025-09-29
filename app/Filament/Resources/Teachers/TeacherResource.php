@@ -59,6 +59,7 @@ class TeacherResource extends Resource
         return parent::getRecordRouteBindingEloquentQuery()
             ->withoutGlobalScopes([
                 SoftDeletingScope::class,
-            ]);
+            ])
+            ->with(['user']);
     }
 }

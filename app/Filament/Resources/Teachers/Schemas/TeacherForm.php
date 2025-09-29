@@ -15,9 +15,21 @@ class TeacherForm
     {
         return $schema
             ->components([
-                TextInput::make('name')->required(),
-                TextInput::make('email')->email()->required(),
-                TextInput::make('password')->password()->required(fn (string $context): bool => $context === 'create')->dehydrated(fn ($state) => filled($state))->maxLength(255),
+                TextInput::make('user.name')
+                    ->label('Nama Lengkap')
+                    ->required()
+                    ->maxLength(255),
+                TextInput::make('user.email')
+                    ->label('Email')
+                    ->email()
+                    ->required()
+                    ->maxLength(255),
+                TextInput::make('user.password')
+                    ->password()
+                    ->revealable()
+                    ->required(fn (string $context): bool => $context === 'create')
+                    ->dehydrated(fn ($state) => filled($state))
+                    ->maxLength(255),
                 TextInput::make('employee_id')->label('ID Pegawai')->required(),
                 TextInput::make('nip')->label('NIP')->nullable(),
                 TextInput::make('position')->label('Jabatan')->required(),

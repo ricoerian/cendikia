@@ -13,14 +13,17 @@ class CreateStudent extends CreateRecord
 
     protected function mutateFormDataBeforeCreate(array $data): array
     {
-        $user = User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-            'role' => 'student',
-        ]);
-
-        $data['user_id'] = $user->id;
+        if (isset($data['user']) && is_array($data['user'])) {
+            $userData = $data['user'];
+            $user = User::create([
+                'name' => $userData['name'],
+                'email' => $userData['email'],
+                'password' => Hash::make($userData['password']),
+                'role' => 'parent',
+            ]);
+            $data['user_id'] = $user->id;
+            unset($data['user']);
+        }
         return $data;
     }
 }
