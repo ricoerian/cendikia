@@ -17,6 +17,7 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\Classrooms\RelationManagers\EnrollmentsRelationManager;
+use App\Filament\Resources\Classrooms\RelationManagers\TeachingSchedulesRelationManager;
 
 class ClassroomResource extends Resource
 {
@@ -43,6 +44,7 @@ class ClassroomResource extends Resource
     {
         return [
             EnrollmentsRelationManager::class,
+            TeachingSchedulesRelationManager::class,
         ];
     }
 

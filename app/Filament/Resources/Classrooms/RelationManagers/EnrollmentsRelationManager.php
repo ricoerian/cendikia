@@ -15,15 +15,13 @@ use Filament\Actions\ForceDeleteAction;
 use Filament\Actions\ForceDeleteBulkAction;
 use Filament\Actions\RestoreAction;
 use Filament\Actions\RestoreBulkAction;
-use Filament\Forms;
-use Filament\Forms\Form;
-use Filament\Forms\Get;
-use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Textarea;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Schemas\Schema;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\TrashedFilter;
-use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -38,7 +36,7 @@ class EnrollmentsRelationManager extends RelationManager
     {
         return $schema
             ->components([
-                Forms\Components\Select::make('student_id')
+                Select::make('student_id')
                     ->label('Pilih Siswa')
                     ->options(function (RelationManager $livewire): array {
                         $enrolledStudentIds = $livewire->ownerRecord->enrollments()->pluck('student_id')->toArray();
@@ -51,10 +49,15 @@ class EnrollmentsRelationManager extends RelationManager
                     })
                     ->relationship(
                         name: 'student',
-                        titleAttribute: 'user.name',
-                        modifyQueryUsing: fn (Builder $query) => $query->with('user')
+                        titleAttribute: 'name',
+                        modifyQueryUsing: function (Builder $query) {
+                            return $query->join('users', 'students.user_id', '=', 'users.id')
+                                ->where('users.role', 'student')
+                                ->select('students.id', 'users.name')
+                                ->orderBy('users.name');
+                        }
                     )
-                    ->getOptionLabelFromRecordUsing(fn ($record) => $record->user->name ?? 'Unknown')
+                    ->getOptionLabelFromRecordUsing(fn ($record) => $record->name ?? 'Unknown')
                     ->searchable()
                     ->required()
                     ->unique(
@@ -66,7 +69,7 @@ class EnrollmentsRelationManager extends RelationManager
                         }
                     ),
 
-                Forms\Components\Select::make('status')
+                Select::make('status')
                     ->options([
                         'aktif' => 'Aktif',
                         'lulus' => 'Lulus',
@@ -76,11 +79,11 @@ class EnrollmentsRelationManager extends RelationManager
                     ->default('aktif')
                     ->required(),
 
-                Forms\Components\DatePicker::make('enrolled_at')
+                DatePicker::make('enrolled_at')
                     ->label('Tanggal Didaftarkan')
                     ->default(now()),
 
-                Forms\Components\Textarea::make('notes')
+                Textarea::make('notes')
                     ->label('Catatan')
                     ->columnSpanFull(),
             ]);
@@ -91,9 +94,9 @@ class EnrollmentsRelationManager extends RelationManager
         return $table
             ->recordTitleAttribute('student.user.name')
             ->columns([
-                Tables\Columns\TextColumn::make('student.user.name')->label('Nama Siswa'),
-                Tables\Columns\TextColumn::make('student.nis')->label('NIS'),
-                Tables\Columns\TextColumn::make('status')
+                TextColumn::make('student.user.name')->label('Nama Siswa'),
+                TextColumn::make('student.nis')->label('NIS'),
+                TextColumn::make('status')
                     ->badge()
                     ->color(fn (string $state): string => match ($state) {
                         'aktif' => 'primary',
@@ -101,7 +104,7 @@ class EnrollmentsRelationManager extends RelationManager
                         'mengulang' => 'warning',
                         'dikeluarkan' => 'danger',
                     }),
-                Tables\Columns\TextColumn::make('enrolled_at')->label('Tanggal Daftar')->date(),
+                TextColumn::make('enrolled_at')->label('Tanggal Daftar')->date(),
             ])
             ->filters([
                 TrashedFilter::make(),

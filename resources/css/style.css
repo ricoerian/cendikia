@@ -358,7 +358,7 @@ body.nav-open {
    ==================================== */
 
 .hero-section {
-    background-image: linear-gradient(rgba(4, 34, 39, 0.65), rgba(4, 34, 39, 0.65)), url('https://smkpn.ricoeri.my.id/files/IMG-20250626-WA00221.webp');
+    background-image: linear-gradient(rgba(4, 34, 39, 0.65), rgba(4, 34, 39, 0.65)), url('/images/website/IMG-20250626-WA00221.webp');
     background-size: cover;
     background-position: center bottom;
     background-attachment: fixed;
@@ -902,7 +902,7 @@ body.nav-open {
 }
 
 .cta-section {
-    background-image: linear-gradient(rgba(4, 34, 39, 0.65), rgba(4, 34, 39, 0.65)), url('https://smkpn.ricoeri.my.id/files/IMG-20241116-WA0021.jpg');
+    background-image: linear-gradient(rgba(4, 34, 39, 0.65), rgba(4, 34, 39, 0.65)), url('/images/website/IMG-20241116-WA0021.jpg');
     background-size: cover;
     background-position: center bottom;
     background-attachment: fixed;

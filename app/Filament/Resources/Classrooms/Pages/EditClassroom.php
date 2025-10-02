@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Classrooms\Pages;
 
 use App\Filament\Resources\Classrooms\ClassroomResource;
+use App\Filament\Resources\Classrooms\Widgets\ScheduleCalendarWidget;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\ForceDeleteAction;
 use Filament\Actions\RestoreAction;
@@ -18,6 +19,15 @@ class EditClassroom extends EditRecord
             DeleteAction::make(),
             ForceDeleteAction::make(),
             RestoreAction::make(),
+        ];
+    }
+
+    protected function getFooterWidgets(): array
+    {
+        return [
+            ScheduleCalendarWidget::make([
+                'record' => $this->getRecord(),
+            ]),
         ];
     }
 }

@@ -84,11 +84,31 @@ class PpdbRegistrationForm
                     ]),
                     Tab::make('Data Tambahan')->schema([
                         Section::make('Data Lainnya')->columns(2)->schema([
-                            TextInput::make('transportation_mode')->label('Moda Transportasi'),
+                            TextInput::make('transportation_mode')->label('Transportasi'),
                             TextInput::make('distance_to_school')->label('Jarak ke Sekolah (meter)')->numeric(),
                             TextInput::make('family_card_number')->label('No. Kartu Keluarga'),
                             TextInput::make('kip_number')->label('No. KIP (jika ada)'),
                             TextInput::make('kps_number')->label('No. KPS (jika ada)'),
+                        ]),
+                        Section::make('Informasi Referensi')->schema([
+                            Select::make('reference_source')
+                                ->label('Dapat informasi pendaftaran dari mana?')
+                                ->options([
+                                    'Guru' => 'Guru',
+                                    'Siswa' => 'Siswa',
+                                    'Alumni' => 'Alumni',
+                                    'Website' => 'Website Sekolah',
+                                    'Instagram' => 'Instagram',
+                                    'TikTok' => 'TikTok',
+                                    'Facebook' => 'Facebook',
+                                    'Brosur' => 'Brosur / Spanduk',
+                                    'Lainnya' => 'Lainnya',
+                                ])
+                                ->live(),
+
+                            TextInput::make('reference_details')
+                                ->label('Sebutkan Nama / Detail Referensi')
+                                ->visible(fn ($get) => in_array($get('reference_source'), ['Guru', 'Siswa', 'Alumni', 'Instagram', 'TikTok', 'Facebook'])),
                         ]),
                         Section::make('Data Kesehatan')->columns(3)->schema([
                             TextInput::make('height')->label('Tinggi Badan (cm)')->numeric(),

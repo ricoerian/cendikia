@@ -23,7 +23,7 @@ class PpdbRegistrations extends Model
         'mother_education', 'mother_occupation', 'mother_income', 'mother_religion',
         'mother_address', 'guardian_name', 'guardian_phone_number', 'guardian_address',
         'guardian_relationship', 'height', 'weight', 'blood_type', 'medical_history',
-        'kip_number', 'kps_number', 'documents',
+        'kip_number', 'kps_number', 'documents', 'reference_source', 'reference_details'
     ];
 
     protected $casts = [
